@@ -6,7 +6,7 @@ import axios from "axios";
 
 function App() {
    const [count, setCount] = useState(0);
-   const [data, setData] = useState(0);
+   const [data, setData] = useState("");
 
    useEffect(() => {
       axios.get(import.meta.env.VITE_API_URL).then((res) => {
@@ -33,7 +33,13 @@ function App() {
                Edit <code>src/App.tsx</code> and save to test HMR
             </p>
          </div>
-         {data}
+         <img
+            src={data}
+            alt="image"
+            width={300}
+            height={300}
+            style={{ objectFit: "contain" }}
+         />
          <p className="read-the-docs">
             Click on the Vite and React logos to learn more
          </p>
