@@ -9,7 +9,7 @@ function App() {
    const [data, setData] = useState(0);
 
    useEffect(() => {
-      axios.get("http://localhost:3000").then((res) => {
+      axios.get(import.meta.env.VITE_API_URL).then((res) => {
          setData(res.data);
       });
    }, []);
